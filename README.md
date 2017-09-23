@@ -1,15 +1,17 @@
 ### subnetwork - Network Google Cloud Platform 
 
+Manages a subnetwork within GCE.
+
 ##### Example (minimum)
 
 ```hcl
 module "personal-vpc" {
-  source = "github.com/tasdikrahman/tf-module-gcp-network"
+  source = "tasdikrahman/network/gcp"
   name   = "${var.vpc_name}"
 }
 
 module "subnet-personal-vpc" {
-  source            = "github.com/tasdikrahman/tf-module-gcp-network-subnet"
+  source            = "tasdikrahman/network-subnet/gcp"
   name              = "${var.subnet_name}"
   vpc               = "${module.personal-vpc.self_link}"
   subnetwork-region = "${var.subnetwork_region}"
@@ -32,6 +34,12 @@ module "subnet-personal-vpc" {
 |------|-------------|
 | gateway_address | The IP address of the gateway |
 | self_link | The URL of the created resource |
+
+## Docs 
+
+- module docs: https://github.com/tasdikrahman/terraform-gcp-network-subnet/blob/master/README.md
+- https://www.terraform.io/docs/providers/google/r/compute_subnetwork.html
+- https://cloud.google.com/compute/docs/vpc/#vpc_networks_and_subnets
 
 ## License
 
