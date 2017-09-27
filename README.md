@@ -11,7 +11,7 @@ module "personal-vpc" {
 }
 
 module "subnet-personal-vpc" {
-  source            = "tasdikrahman/network-subnet/gcp"
+  source            = "tasdikrahman/network-subnet/google"
   name              = "${var.subnet_name}"
   vpc               = "${module.personal-vpc.self_link}"
   subnetwork-region = "${var.subnetwork_region}"
