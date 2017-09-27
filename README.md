@@ -6,7 +6,7 @@ Manages a subnetwork within GCE.
 
 ```hcl
 module "personal-vpc" {
-  source = "tasdikrahman/network/gcp"
+  source = "tasdikrahman/network/google"
   name   = "${var.vpc_name}"
 }
 
